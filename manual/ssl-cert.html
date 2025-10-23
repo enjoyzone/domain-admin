@@ -1,25 +1,22 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SSL证书申请 &mdash; Domain Admin latest 文档</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=1f19b280"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
@@ -38,9 +35,6 @@
           <a href="../index.html" class="icon icon-home">
             Domain Admin
           </a>
-              <div class="version">
-                latest
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
@@ -208,13 +202,13 @@ www.baidu.com
 <span class="sd">@File    : fake_server.py</span>
 <span class="sd">@Date    : 2024-03-22</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="n">rule</span><span class="o">=</span><span class="s1">&#39;/issueCertificate&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
-<span class="k">def</span> <span class="nf">issue_certificate</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">issue_certificate</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
     <span class="c1"># 此处可自行实现部署逻辑</span>
@@ -226,16 +220,16 @@ www.baidu.com
 </pre></div>
 </div>
 <p>完整示例，由群友 <code class="docutils literal notranslate"><span class="pre">&#64;星河</span> <span class="pre">๑.</span></code>提供</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">delayed_restart_nginx</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">delayed_restart_nginx</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;在延迟5秒后重启nginx&quot;&quot;&quot;</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
@@ -245,7 +239,7 @@ www.baidu.com
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;重启nginx失败: &#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/deploy-cert&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
-<span class="k">def</span> <span class="nf">deploy_cert</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">deploy_cert</span><span class="p">():</span>
     <span class="n">token</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">token</span> <span class="o">!=</span> <span class="s1">&#39;token&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Invalid token&#39;</span><span class="p">}),</span> <span class="mi">401</span>
@@ -312,6 +306,13 @@ www.baidu.com
 <ul class="simple">
 <li><p>如果是全程采用<code class="docutils literal notranslate"><span class="pre">一键部署</span></code>方式操作，域名到期前30天会自动续期</p></li>
 <li><p>申请到的证书，不会到期提醒，如需到期提醒，请将部署该证书的域名添加到<code class="docutils literal notranslate"><span class="pre">证书监控</span></code>列表</p></li>
+<li><p>如果总是验证不通过，可能是验证服务器有问题，可以使用其他证书申请手段，临时处理证书申请问题</p>
+<ul>
+<li><p>阿里云：每一个自然年内，提供20个90天个人测试证书（免费版） <a class="reference external" href="https://help.aliyun.com/zh/ssl-certificate/user-guide/purchase-an-individual-test-certificate?from=domain-admin.cn">点击跳转</a></p></li>
+<li><p>腾讯云：申请20张免费证书 <a class="reference external" href="https://cloud.tencent.com/document/product/400/6814?from=domain-admin.cn">点击跳转</a></p></li>
+<li><p>acme.sh 自动申请证书也可以很好的配合domain-admin的到期提醒</p></li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
@@ -327,7 +328,7 @@ www.baidu.com
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2023, Peng Shiyu.</p>
+    <p>&#169; 版权所有 2023, Peng Shiyu。</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

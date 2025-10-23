@@ -1,25 +1,22 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-CN">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>常见问题 &mdash; Domain Admin latest 文档</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=1f19b280"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
@@ -38,9 +35,6 @@
           <a href="../index.html" class="icon icon-home">
             Domain Admin
           </a>
-              <div class="version">
-                latest
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
@@ -273,13 +267,13 @@ domain_admin{domain=&quot;www.taobao.com&quot;} 37.0
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">from</span> <span class="nn">kubernetes</span> <span class="kn">import</span> <span class="n">config</span><span class="p">,</span> <span class="n">client</span>
-<span class="kn">import</span> <span class="nn">tldextract</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kubernetes</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span><span class="p">,</span> <span class="n">client</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tldextract</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 
 
@@ -288,7 +282,7 @@ domain_admin{domain=&quot;www.taobao.com&quot;} 37.0
 <span class="p">}</span>
 
 
-<span class="k">def</span> <span class="nf">get_token</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_token</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">/api/login&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
@@ -307,7 +301,7 @@ domain_admin{domain=&quot;www.taobao.com&quot;} 37.0
         <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">add_domain</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_domain</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">/api/addDomainInfo&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;domain&#39;</span><span class="p">:</span> <span class="n">domain</span>
@@ -325,7 +319,7 @@ domain_admin{domain=&quot;www.taobao.com&quot;} 37.0
         <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">config</span><span class="o">.</span><span class="n">load_incluster_config</span><span class="p">()</span>
     <span class="n">kube_api</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ExtensionsV1beta1Api</span><span class="p">()</span>
     <span class="n">ingresses</span> <span class="o">=</span> <span class="n">kube_api</span><span class="o">.</span><span class="n">list_ingress_for_all_namespaces</span><span class="p">()</span>
@@ -423,7 +417,7 @@ domain_admin{domain=&quot;www.taobao.com&quot;} 37.0
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2023, Peng Shiyu.</p>
+    <p>&#169; 版权所有 2023, Peng Shiyu。</p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
